@@ -1,0 +1,162 @@
+/* BODY STYLING */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  text-align: center;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  position: relative;
+}
+
+/* Light mode */
+body.light {
+  background-color: #a32323;
+  color: white;
+}
+
+/* Dark mode */
+body.dark {
+  background-color: #121212;
+  color: #ffeb60;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 50px; 
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Theme toggle */
+#themeToggle {
+  position: fixed;
+  top: 10px; 
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  z-index: 1000;
+}
+
+#themeToggle:hover {
+  transform: scale(1.15);
+}
+
+/* Stopwatch container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 140px;
+}
+
+/* Time display */
+#display {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+button {
+  width: 160px;
+  padding: 0.8rem 0;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 0.2s ease-in-out;
+}
+
+#toggleBtn {
+  background-color: #ffeb60;
+  color: #333;
+}
+
+#lapBtn {
+  background-color: transparent;
+  color: inherit;
+  border: 2px solid currentColor;
+}
+
+#clearBtn {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark #clearBtn {
+  background-color: #ffeb60;
+  color: #121212;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+/* Lap list */
+#laps {
+  list-style: none;
+  margin-top: 1rem;
+  max-height: 180px;
+  overflow-y: auto;
+  width: 200px;
+  padding: 0;
+}
+
+#laps li {
+  font-size: 1rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+body.dark #laps li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  #display {
+    font-size: 2rem;
+  }
+
+  button {
+    width: 130px;
+    font-size: 0.9rem;
+  }
+}
